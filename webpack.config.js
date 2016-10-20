@@ -1,8 +1,10 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require("webpack");
 
 module.exports = {
   entry: [
+    'bootstrap-loader',
     './assets/js/global.js'
   ],
   output: {
@@ -11,6 +13,11 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
+    new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
+    })
   ],
   devServer: {
     inline: true,
@@ -25,14 +32,18 @@ module.exports = {
             'css!sass'
         )
       },
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['es2015', 'react']
+      {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+        loader: "file"
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'react']
+        }
       }
-    }
-  ]
+    ]
   }
 };

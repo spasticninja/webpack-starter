@@ -2,9 +2,4 @@
  * Global CSS
  */
 
-h1 {
-  color: pink;
-  &.page-header {
-    border-bottom: 2px solid pink;
-  }
-}
+@import 'components/header';
