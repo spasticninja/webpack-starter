@@ -1,13 +1,16 @@
 {
-  "name": "allisonbetancourt-com",
+  "name": "React + Webpack Boilerplate",
   "version": "1.0.0",
-  "description": "Personal website",
+  "description": "React + Webpack Boilerplate",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "http-server -c-1 .",
     "build": "webpack --progress --colors",
     "watch": "webpack --progress --colors --watch"
+  },
+  "jshintConfig" : {
+    "esversion": 6
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +28,6 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "bootstrap-loader": "^2.0.0-beta.12",
